@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0f1e 0%, #1a1a3d 100%);
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .aurora-glass {
+    @apply bg-aurora-glass backdrop-blur-lg border border-aurora-border rounded-2xl;
+  }
+
+  .aurora-glass-hover {
+    @apply hover:bg-aurora-glass-hover hover:border-aurora-border-hover transition-all duration-300;
+  }
+
+  .aurora-button {
+    @apply bg-aurora-accent text-black font-semibold px-4 py-2 rounded-lg 
+           hover:bg-aurora-accent-hover transition-all duration-300 
+           shadow-lg hover:shadow-aurora-accent/25;
+  }
+
+  .aurora-button-secondary {
+    @apply bg-aurora-glass text-aurora-text border border-aurora-border 
+           px-4 py-2 rounded-lg hover:bg-aurora-glass-hover 
+           hover:border-aurora-border-hover transition-all duration-300;
+  }
+
+  .aurora-input {
+    @apply bg-aurora-glass border border-aurora-border rounded-lg px-3 py-2 
+           text-aurora-text placeholder-aurora-text-muted
+           focus:outline-none focus:border-aurora-accent focus:ring-1 focus:ring-aurora-accent/50
+           transition-all duration-300;
+  }
+
+  .aurora-card {
+    @apply aurora-glass p-6 shadow-xl;
+  }
+
+  .aurora-glow {
+    @apply animate-aurora-glow;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.5);
+}
